@@ -17,7 +17,9 @@ const App = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("https://itstudio-backend-w55f.onrender.com/api/users");
+      const response = await axios.get(
+        "https://itstudio-backend-w55f.onrender.com/api/users"
+      );
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -26,7 +28,10 @@ const App = () => {
 
   const addUser = async (user) => {
     try {
-      const response = await axios.post("https://itstudio-backend-w55f.onrender.com/api/users", user);
+      const response = await axios.post(
+        "https://itstudio-backend-w55f.onrender.com/api/users",
+        user
+      );
       setUsers([...users, response.data]);
     } catch (error) {
       console.error("Error adding user:", error);
@@ -35,7 +40,10 @@ const App = () => {
 
   const updateUser = async (user) => {
     try {
-      const response = await axios.put(`https://itstudio-backend-w55f.onrender.com/api/users/${user._id}`, user);
+      const response = await axios.put(
+        `https://itstudio-backend-w55f.onrender.com/api/users/${user._id}`,
+        user
+      );
       setUsers(users.map((u) => (u._id === user._id ? response.data : u)));
     } catch (error) {
       console.error("Error updating user:", error);
@@ -44,7 +52,9 @@ const App = () => {
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`https://itstudio-backend-w55f.onrender.com/${id}`);
+      await axios.delete(
+        `https://itstudio-backend-w55f.onrender.com/api/users/${id}`
+      );
       setUsers(users.filter((u) => u._id !== id));
     } catch (error) {
       console.error("Error deleting user:", error);
@@ -61,7 +71,9 @@ const App = () => {
 
   const sendSelectedUsers = async () => {
     try {
-      await axios.post("https://itstudio-backend-w55f.onrender.com/api/send", { selectedUsers });
+      await axios.post("https://itstudio-backend-w55f.onrender.com/api/send", {
+        selectedUsers,
+      });
       setSelectedUsers([]);
       alert("Data Sent Successfully");
     } catch (error) {
@@ -72,7 +84,6 @@ const App = () => {
   return (
     <div className="p-4 app-container">
       <div className="app-inner-container">
-
         <AnimatePresence>
           {isFormVisible && (
             <UserForm
