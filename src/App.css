@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
+  width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-image: url("https://i.ibb.co/vJt5HSh/noisy-texture-300x300-o10-d10-c-a82851-t1.png");
+  background-size: cover;
+  /*background-color: rgba(255, 170, 0, 0.493);
+    background-color: #17302A; */
+  background-color: #c9d1ff;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.app-inner-container {
+  width: 90%;
+}
+
+td {
+  color: #27293b;
+  font-weight: 600;
+  border: 2px solid #adbada;
+}
+
+th {
+  color: #27293b;
+  border: 2px solid #adbada;
+}
+
+.user-header {
+  text-align: center;
+  padding: 2px 0px;
+  background-color: #adbada;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input:hover {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 1082px) {
+  .app-inner-container {
+    width: 100%;
   }
 }
+
+@media (max-width: 962px) {
+  .app-inner-container {
+    width: 100%;
+  }
+
+  td {
+    width: max-content;
+  }
+
+  .div-col {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 888px) {
+  td {
+    font-size: 12px;
+  }
+  th {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 736px) {
+  td {
+    font-size: 10px;
+  }
+  th {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 666px) {
+  td {
+    font-size: 8px;
+  }
+  th {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 596px) {
+    td {
+      font-size: 7px;
+      padding-left: 2px  !important;
+      padding-right: 2px !important;
+    }
+    th {
+      font-size: 8px;
+    }
+  }
